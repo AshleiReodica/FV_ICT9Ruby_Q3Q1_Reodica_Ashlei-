@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Quiz1</title>
+
+    <style>
+         body {
+            background-image: url(https://images.rawpixel.com/image_social_landscape/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zNzNiYXRjaDEzLTA4Ni1renBzNWVnaS5qcGc.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .box {
+            background:#578FCA;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .answer {
+            display: none;
+            color: whitesmoke;
+            font-weight: Sans serif;
+        }
+
+        .arithmetic {
+            color: hotpink;
+        }
+        .comparison {
+            color: Yellow;
+        }
+        .logical {
+            color: Lightblue;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-white bg-dark p-3">What if a = 30 and b = 10?</h1>
+
+        <div class="box">
+            <h2 class="arithmetic">Arithmetic Operator</h2>
+            <p><b>a. Exponent:</b> <span id="exp" class="answer"></span></p>
+            <p><b>b. Mod:</b> <span id="mod" class="answer"></span></p>
+            <button class="btn btn-warning" onclick="showAnswer('exp', 30**10); showAnswer('mod', 30 % 10);">Show Answer</button>
+        </div>
+        <br>
+
+        <div class="box">
+            <h2 class="comparison">Comparison Operator</h2>
+            <p><b>a. is a greater than b?</b> <span id="greater" class="answer"></span></p>
+            <p><b>b. is a equal to b?</b> <span id="equal" class="answer"></span></p>
+            <button class="btn btn-dark text-white" onclick="showAnswer('greater', 30 > 10); showAnswer('equal', 30 == 10);">Show Answer</button>
+        </div>
+        <br>
+
+        <div class="box">
+            <h2 class="logical">Logical Operator</h2>
+            <p><b>a. (a <= b) && (a >= b):</b> <span id="logical1" class="answer"></span></p>
+            <p><b>b. (a != b) || (a == b):</b> <span id="logical2" class="answer"></span></p>
+            <button class="btn btn-success" onclick="showAnswer('logical1', (30 <= 10) && (30 >= 10)); showAnswer('logical2', (30 != 10) || (30 == 10));">Show Answer</button>
+        </div>
+    </div>
+    <script>
+        function showAnswer(id, value) {
+            document.getElementById(id).innerHTML = value;
+            document.getElementById(id).style.display = 'inline';
+        }
+    </script>
+</body>
+</html>
